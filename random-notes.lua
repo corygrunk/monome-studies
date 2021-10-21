@@ -19,7 +19,8 @@ scales =
 }
 
 scale = scales.major
-transpose = 0
+transpose1 = 0
+transpose2 = 0
 prob = 80
 
 function init()
@@ -36,7 +37,7 @@ input[1].change = function(state)
     -- Output 1 + 2
     rand = math.random() * 10 - 5
     if rand < 0 then rand = rand * -1 end
-    note = rand + transpose
+    note = rand + transpose1
     output[1].execute() -- fire trigger
     output[2].volts = note
     print(note)
@@ -44,7 +45,7 @@ input[1].change = function(state)
     -- Output 3 + 4
     rand = math.random() * 10 - 5
     if rand < 0 then rand = rand * -1 end
-    note = rand + transpose
+    note = rand + transpose2
     output[3].execute() -- fire trigger
     output[4].volts = note
     print(note)
